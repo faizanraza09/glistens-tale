@@ -1,3 +1,4 @@
+// Initialize variables
 let currentPanel = 1;
 const totalPanels = 31;  // Adjust the total number of panels
 let eatenAnimals = [];
@@ -6,8 +7,10 @@ let nightMusic = [9,10,17,18,25,26];
 let munchMusic = [11,19,27];
 let previousMusic = document.getElementById('morningForest');
 
+// Event listener for keydown event
 document.addEventListener('keydown', handleKeyDown);
 
+// Function to handle keydown event
 function handleKeyDown(event) {
     if (currentPanel == 10 ||  currentPanel == 18 || currentPanel == 26) {
         return;
@@ -17,6 +20,7 @@ function handleKeyDown(event) {
     }
 }
 
+// Function to navigate to the next panel
 function nextPanel() {
     if (currentPanel < totalPanels) {
         currentPanel++;
@@ -27,20 +31,24 @@ function nextPanel() {
     }
 }
 
+// Function to handle eating an animal
 function eatAnimal(animal) {
     eatenAnimals.push(animal);
     const animalElements = document.querySelectorAll(`.animal.${animal}`);
     const nightAnimalElements = document.querySelectorAll(`.animal.animal-night.${animal}`);
 
+    // Hide the animal elements
     for (let i = 0; i < animalElements.length; i++) {
         const animalElement = animalElements[i];
         animalElement.style.display = 'none';
     };
 
+    // Hide the night animal elements
     for (let i = 0; i < nightAnimalElements.length; i++) {
         const nightAnimalElement = nightAnimalElements[i];
         nightAnimalElement.style.display = 'none';
     }
+
     const stomachElement = document.querySelectorAll(`.animal.${animal}-stomach`)[eatenAnimals.length-1];
 
     // Display the stomach
@@ -48,14 +56,18 @@ function eatAnimal(animal) {
     nextPanel();
 }
 
+// Function to update the current panel
 function updatePanel() {
     const delay = 500;
 
     setTimeout(() => {
+        // Hide all panels
         document.querySelectorAll('.panel').forEach(panel => panel.style.display = 'none');
+        // Show the current panel
         document.getElementById(`panel${currentPanel}`).style.display = 'block';
 
         let music;
+        // Determine the music based on the current panel
         if (susMusic.includes(currentPanel)) {
             music = document.getElementById('suspenseSound');
         } else if (nightMusic.includes(currentPanel)) {
@@ -67,6 +79,7 @@ function updatePanel() {
         }
 
         const allMusic = document.querySelectorAll('audio');
+        // Pause the previous music and reset the current time if it's the same as the new music
         allMusic.forEach(audio => {
             if (previousMusic.src === audio.src) {
                 audio.pause();
@@ -77,52 +90,16 @@ function updatePanel() {
             }
         });
 
+        // Load and play the new music if it's different from the previous music
         if (previousMusic.src != music.src) {
-            music.load(); // Reload the source
-            music.play(); // Play the new source
+            music.load();
+            music.play();
             previousMusic = music;
         } else {    
+            // Play the music if it's paused
             if (music.paused) {
                 music.play();
             }
         }
-        
-
-        // if (currentPanel === 13) {
-        //     const dayPanel = document.getElementById('panel13');
-        //     const panel13Scene = document.getElementById('panel13Scene');
-        //     panel13.style.display = 'block';
-
-        //     // Check if the animal has been eaten and update the scene
-        //     if (!eatenAnimals.includes('rabbit')) {
-        //         panel13Scene.innerHTML += '<div class="animal rabbit"></div>';
-        //     }
-        //     if (!eatenAnimals.includes('squirrel')) {
-        //         panel13Scene.innerHTML += '<div class="animal squirrel"></div>';
-        //     }
-        //     if (!eatenAnimals.includes('hamster')) {
-        //         panel13Scene.innerHTML += '<div class="animal hamster"></div>';
-        //     }
-        // } 
-        // else if (currentPanel === 17) {
-        //     const panel17 = document.getElementById('panel17');
-        //     const panel17Scene = document.getElementById('panel17Scene');
-        //     panel17.style.display = 'block';
-
-        //     // Check if the animal has been eaten and update the scene
-        //     if (!eatenAnimals.includes('rabbit')) {
-        //         panel17Scene.innerHTML += `<div class="animal animal-night rabbit" onclick="eatAnimal('rabbit')"></div>`;
-        //     }
-        //     if (!eatenAnimals.includes('squirrel')) {
-        //         panel17Scene.innerHTML += `<div class="animal animal-night squirrel" onclick="eatAnimal('squirrel')"></div>`;
-        //     }
-        //     if (!eatenAnimals.includes('hamster')) {
-        //         panel17Scene.innerHTML += `<div class="animal animal-night hamster" onclick="eatAnimal('hamster')"></div>`;
-        //     }
-        // }
-        // else {
-        //     document.getElementById(`panel${currentPanel}`).style.display = 'block';
-        // }
     }, delay);
 }
-
