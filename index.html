@@ -10,33 +10,217 @@
 
 <div class="comic-container">
     <div class="panel" id="panel1">
-        <h1>Once upon a time, in a forgotten forest...</h1>
-        <p>In the heart of the forest, there lived a peculiar creature named Glisten...</p>
-        <button class="button" onclick="nextPanel()">Continue</button>
+        <div class="scene"></div>
     </div>
 
-    <div class="panel" id="panel2">
-        <h1>Daytime Adventures</h1>
-        <!-- Content for daytime panel -->
-        <button class="button" onclick="nextPanel()">Continue</button>
+    <div class="panel day" id="panel2">
+        <div class="scene">
+            <div class="slime"></div>
+        </div>
     </div>
 
-    <div class="panel nighttime" id="panel3">
-        <h1>Nighttime Transformation</h1>
-        <!-- Content for nighttime panel -->
-        <button class="button" onclick="nextPanel()">Continue</button>
+    <div class="panel day" id="panel3">
+        <div class="scene">
+            <div class="slime"></div>
+            <div class="animal rabbit"></div>
+        </div>
     </div>
 
-    <div class="panel" id="panel4">
-        <h1>Reflection and Guilt</h1>
-        <!-- Content for the aftermath panel -->
-        <button class="button" onclick="nextPanel()">Continue</button>
+    <div class="panel day" id="panel4">
+        <div class="scene">
+            <div class="slime"></div>
+            <div class="animal rabbit" ></div>
+            <div class="animal squirrel" ></div>
+        </div>
     </div>
 
-    <div class="panel" id="panel5">
-        <h1>End of the Tale</h1>
-        <!-- Final panel content -->
+    <div class="panel day" id="panel5">
+        <div class="scene">
+            <div class="slime"></div>
+            <div class="animal rabbit" ></div>
+            <div class="animal squirrel" ></div>
+            <div class="animal hamster" ></div>
+        </div>
     </div>
+
+    <div class="panel day" id="panel6">
+        <div class="scene">
+            <div class="slime"></div>
+            <div class="animal rabbit" ></div>
+            <div class="animal squirrel" ></div>
+            <div class="animal hamster"></div>
+        </div>
+    </div>
+
+    <div class="panel" id="panel7">
+        <div class="scene">
+        </div>
+    </div>
+
+    <div class="panel" id="panel8">
+        <div class="scene">
+        </div>
+    </div>
+
+    <div class="panel night" id="panel9">
+        <div class="scene">
+            <div class="slime slime-night"></div>
+        </div>
+    </div>
+
+    <div class="panel night" id="panel10">
+        <div class="scene">
+            <div class="slime slime-night"></div>
+            <div class="animal animal-night rabbit" onclick="eatAnimal('rabbit')"></div>
+            <div class="animal animal-night squirrel" onclick="eatAnimal('squirrel')"></div>
+            <div class="animal animal-night hamster" onclick="eatAnimal('hamster')"></div>
+        </div>
+    </div>
+
+    <div class="panel eat" id="panel11">
+        <div class="scene">
+            <div class="animal rabbit-stomach"></div>
+            <div class="animal squirrel-stomach"></div>
+            <div class="animal hamster-stomach"></div>
+        </div>
+    </div>
+
+    <div class="panel morning" id="panel12">
+        <div class="scene">
+        </div>
+    </div>
+
+    <div class="panel day" id="panel13">
+        <div class="scene">
+            <div class="bigger slime shock"></div>
+            <div class="animal rabbit" ></div>
+            <div class="animal squirrel" ></div>
+            <div class="animal hamster"></div>
+        </div>
+    </div>
+
+    <div class="panel day" id="panel14">
+        <div class="scene">
+            <div class="bigger slime"></div>
+            <div class="animal rabbit" ></div>
+            <div class="animal squirrel" ></div>
+            <div class="animal hamster"></div>
+        </div>
+    </div>
+
+    <div class="panel" id="panel15">
+        <div class="scene">
+        </div>
+    </div>
+
+    <div class="panel" id="panel16">
+        <div class="scene">
+        </div>
+    </div>
+
+    <div class="panel night" id="panel17">
+        <div class="scene">
+            <div class="bigger slime slime-night"></div>
+        </div>
+    </div>
+
+    <div class="panel night" id="panel18">
+        <div class="scene">
+            <div class="bigger slime slime-night"></div>
+            <div class="animal animal-night rabbit" onclick="eatAnimal('rabbit')"></div>
+            <div class="animal animal-night squirrel" onclick="eatAnimal('squirrel')"></div>
+            <div class="animal animal-night hamster" onclick="eatAnimal('hamster')"></div>
+        </div>
+    </div>
+
+    <div class="panel eat" id="panel19">
+        <div class="scene">
+            <div class="animal rabbit-stomach"></div>
+            <div class="animal squirrel-stomach"></div>
+            <div class="animal hamster-stomach"></div>
+        </div>
+    </div>
+
+    <div class="panel morning" id="panel20">
+        <div class="scene">
+        </div>
+    </div>
+
+    <div class="panel day" id="panel21">
+        <div class="scene">
+            <div class="much_bigger slime shock"></div>
+            <div class="animal rabbit" ></div>
+            <div class="animal squirrel" ></div>
+            <div class="animal hamster"></div>
+        </div>
+    </div>
+
+    <div class="panel day" id="panel22">
+        <div class="scene">
+            <div class="much_bigger slime"></div>
+            <div class="animal rabbit" ></div>
+            <div class="animal squirrel" ></div>
+            <div class="animal hamster"></div>
+        </div>
+    </div>
+
+    <div class="panel" id="panel23">
+        <div class="scene">
+        </div>
+    </div>
+
+    <div class="panel" id="panel24">
+        <div class="scene">
+        </div>
+    </div>
+
+    <div class="panel night" id="panel25">
+        <div class="scene">
+            <div class="much_bigger slime slime-night"></div>
+        </div>
+    </div>
+
+    <div class="panel night" id="panel26">
+        <div class="scene">
+            <div class="much_bigger slime slime-night"></div>
+            <div class="animal animal-night rabbit" onclick="eatAnimal('rabbit')"></div>
+            <div class="animal animal-night squirrel" onclick="eatAnimal('squirrel')"></div>
+            <div class="animal animal-night hamster" onclick="eatAnimal('hamster')"></div>
+        </div>
+    </div>
+
+    <div class="panel eat" id="panel27">
+        <div class="scene">
+            <div class="animal rabbit-stomach"></div>
+            <div class="animal squirrel-stomach"></div>
+            <div class="animal hamster-stomach"></div>
+        </div>
+    </div>
+
+    <div class="panel morning" id="panel28">
+        <div class="scene">
+        </div>
+    </div>
+
+    <div class="panel day" id="panel29">
+        <div class="scene">
+            <div class="much_much_bigger slime shock"></div>
+            <div class="animal rabbit" ></div>
+            <div class="animal squirrel" ></div>
+            <div class="animal hamster"></div>
+        </div>
+    </div>
+
+    <div class="panel day" id="panel30">
+        <div class="scene">
+            <div class="much_much_bigger slime sad"></div>
+            <div class="animal rabbit" ></div>
+            <div class="animal squirrel" ></div>
+            <div class="animal hamster"></div>
+        </div>
+    </div>
+
+
 </div>
 
 <script src="script.js"></script>
