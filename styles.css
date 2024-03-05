@@ -131,6 +131,14 @@ body {
 .slime-night {
     background-image: url("images/angry_slime.svg");
 }
+.sad_right{
+    background-size: cover;
+    background-image: url('images/sad_right.svg');
+}
+.smile_right{
+    background-size: cover;
+    background-image: url('images/smile_right.svg');
+}
 
 
 .animal {
@@ -198,6 +206,109 @@ body {
     background-image: url('images/hamster.png'); /* Path to the hamster image */
     display:none;
     opacity: 0.5;
+}
+
+.snail {
+    height: 167px;
+    top: 70%;
+    left: 62%;
+    background-image: url('images/snail.png'); /* Path to the snail image */
+}
+
+.text {
+    position: absolute;
+    background-size: cover;
+    width: 220px;
+    height: 220px;
+    overflow: visible;
+}
+
+.text2 {
+    height: 190px;
+    width: 190px;
+    top: 45%;
+    left: 45%;
+    overflow: visible;
+    background-image: url('textboxes/2.svg'); 
+}
+
+.text3 {
+    height: 13%;
+    width: 15%;
+    top: 50%;
+    left: 42%;
+    background-image: url('textboxes/3.svg');
+}
+
+.text4 {
+    height: 13%;
+    width: 350px;
+    top: 50%;
+    left: 42%;
+    background-image: url('textboxes/4.svg'); 
+}
+
+.text5 {
+    height: 13%;
+    width: 350px;
+    top: 50%;
+    left: 42%;
+    background-image: url('textboxes/5.svg'); 
+}
+.text6 {
+    height: 13%;
+    width: 15%;
+    top: 50%;
+    left: 42%;
+    background-image: url('textboxes/6.svg'); 
+}
+
+.text7 {
+    height: 15%;
+    width: 365px;
+    top: 48%;
+    left: 42%;
+    background-image: url('textboxes/7.svg'); 
+}
+
+.text8 {
+    height: 15%;
+    width: 365px;
+    top: 48%;
+    left: 42%;
+    background-image: url('textboxes/8.svg'); 
+}
+
+.text9 {
+    height: 200px;
+    width: 200px;
+    top: 45%;
+    left: 45%;
+    background-image: url('textboxes/9.svg'); 
+}
+
+.text10 {
+    height: 15%;
+    width: 300px;
+    top: 58%;
+    left: 50%;
+    background-image: url('textboxes/10.svg'); 
+}
+
+.text11 {
+    height: 350px;
+    width: 400px;
+    top: 30%;
+    left: 40%;
+    background-image: url('textboxes/11.svg'); 
+}
+
+.text12 {
+    height: 170px;
+    width: 250px;
+    top: 45%;
+    left: 45%;
+    background-image: url('textboxes/12.svg'); 
 }
 
 @keyframes bounce {

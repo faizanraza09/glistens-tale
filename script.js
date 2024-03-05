@@ -1,10 +1,17 @@
 let currentPanel = 1;
-const totalPanels = 30;  // Adjust the total number of panels
+const totalPanels = 31;  // Adjust the total number of panels
 let eatenAnimals = [];
+let susMusic = [7,8,15,16,23,24];
+let nightMusic = [9,10,17,18,25,26];
+let munchMusic = [11,19,27];
+let previousMusic = document.getElementById('morningForest');
 
 document.addEventListener('keydown', handleKeyDown);
 
 function handleKeyDown(event) {
+    if (currentPanel == 10 ||  currentPanel == 18 || currentPanel == 26) {
+        return;
+    }
     if (event.keyCode === 39) {
         nextPanel();
     }
@@ -14,6 +21,9 @@ function nextPanel() {
     if (currentPanel < totalPanels) {
         currentPanel++;
         updatePanel();
+    }
+    else if (currentPanel == totalPanels) {
+        location.href = location.href;   
     }
 }
 
@@ -44,6 +54,39 @@ function updatePanel() {
     setTimeout(() => {
         document.querySelectorAll('.panel').forEach(panel => panel.style.display = 'none');
         document.getElementById(`panel${currentPanel}`).style.display = 'block';
+
+        let music;
+        if (susMusic.includes(currentPanel)) {
+            music = document.getElementById('suspenseSound');
+        } else if (nightMusic.includes(currentPanel)) {
+            music = document.getElementById('nightForest');
+        } else if (munchMusic.includes(currentPanel)) {
+            music = document.getElementById('munchSound');
+        } else {
+            music = document.getElementById('morningForest');
+        }
+
+        const allMusic = document.querySelectorAll('audio');
+        allMusic.forEach(audio => {
+            if (previousMusic.src === audio.src) {
+                audio.pause();
+                if (previousMusic.src != music.src){
+                    audio.currentTime = 0;
+                    previousMusic.currentTime = 0;
+                }
+            }
+        });
+
+        if (previousMusic.src != music.src) {
+            music.load(); // Reload the source
+            music.play(); // Play the new source
+            previousMusic = music;
+        } else {    
+            if (music.paused) {
+                music.play();
+            }
+        }
+        
 
         // if (currentPanel === 13) {
         //     const dayPanel = document.getElementById('panel13');
